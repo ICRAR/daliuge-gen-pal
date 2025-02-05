@@ -1,0 +1,605 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Examples/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Concepts and Details - dlg_paletteGen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#concepts-and-details" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="dlg_paletteGen" class="md-header__button md-logo" aria-label="dlg_paletteGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dlg_paletteGen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concepts and Details
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="dlg_paletteGen" class="md-nav__button md-logo" aria-label="dlg_paletteGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    dlg_paletteGen
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Concepts and Details
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Concepts and Details
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logical-graphs-and-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical graphs and workflows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palettes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palette-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palette generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Palette generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-inspection-palette-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module inspection palette generation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-code-palette-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source code palette generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes and Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plain-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plain Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known limitations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logical-graphs-and-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical graphs and workflows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palettes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palette-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palette generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Palette generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-inspection-palette-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module inspection palette generation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-code-palette-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source code palette generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes and Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plain-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plain Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known limitations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="concepts-and-details">Concepts and Details</h1>
+<h2 id="logical-graphs-and-workflows">Logical graphs and workflows</h2>
+<p>A DALiuGE logical graph is representing a computational workflow, where nodes are alternating data and application components. Data components are consumed and produced by applications. Edges are representing events allowing the graph to be executed and also representing the dependencies. Logical graphs can be constructed using the <a href="https://eagle-dlg.readthedocs.io">EAGLE</a> visual graph editor and are stored and distributed as JSON files.</p>
+<h2 id="graph-components">Graph components</h2>
+<p>Each graph component (application and data) contains a description of a Python object, which will be instantiated at run-time by the DALiuGE execution engine. These python objects, in general, have a payload which is the actual executable application or data, respectively. We call these objects Drops. Component descriptions are essentially JSON structured versions of the code documentation on a class, method or function level.</p>
+<h2 id="palettes">Palettes</h2>
+<p>A DALiuGE palette is a collection of such JSON component descriptions typically covering a Python package. That means that all methods and functions of such a package are in a single palette. When constructing a logical graph with EAGLE, users are dragging components from one or multiple palettes into the canvas and connect them. The component descriptions also aid EAGLE to check whether such connections are valid. </p>
+<p><em>Note:</em> While DALiuGE graph components are bound to be written in Python, these components are merely wrappers or interfaces around the actual applications. DALiuGE has built-in wrapper components for dedicated pure python, general python functions and methods, C/C++ library, MPI, Bash CLI and docker based applications. The latter are limited to inter-application communication based on files, the others also offer the ability to use memory communications between different applications in a graph.</p>
+<h2 id="palette-generation">Palette generation</h2>
+<p>Palettes can be generated manually using EAGLE, but much more conveniently they can be generated using the <code>dlg_paletteGen</code> tool. The tool supports two main modes of operations, from source code and from an installed module level. In both cases all the details about the actual running code is extracted from that code directly and can thus only be as good as what the developer(s) of that code provided. Thus the quality of the extracted component descriptions is obviously fully depended on what is available in the code. In particular any description of function arguments and keywords, or the function description itself needs to be in the code. If it is not, the component is still available, but without any hint what it is doing, or the documentation of the arguments and keywords.</p>
+<p>Fortunately there are good coding standards for Python and C/C++ to guide developers to produce good and useful in-line documentation. For Python code the <code>dlg_paletteGen</code> tool supports Google, rEST and Numpy as well as the domain specific casatask style in order to match the identified arguments and keywords to documentation strings. In addition the tool uses Python introspection (<em>inspect</em> module) and Python type hints, if available, to fix the types of arguments and keywords as well as the return values. This type information in turn is used by EAGLE to check the validity of edges drawn by users when creating a logical graph. </p>
+<h3 id="module-inspection-palette-generation">Module inspection palette generation</h3>
+<p>This mode enables to extract component descriptions for almost any installed python module directly. This is extremely powerful and totally generic: If the code can be run in your python environment, <code>DALiuGE</code> can use it as well! In most cases it will provide a very acurate reflection of the module/package and does not require to write any special code or change any code at all. Palette generation for packages even as big as the whole of <a href="https://www.astropy.org">astropy</a> or <a href="https://numpy.org">numpy</a> takes only a few seconds, but generates very big palettes with thousands of components, or alternatively, a whole set of sub-module level palettes, when using the <code>-S</code> (<code>--split</code>) command line switch. The extraction also supports PyBind11 modules containing virtually no Python code at all.</p>
+<h3 id="source-code-palette-generation">Source code palette generation</h3>
+<p>This was the original approach taken by <code>dlg_paletteGen</code>. It takes a code source directory given as an input parameter, <code>idir</code> and uses <a href="https://doxygen.nl">doxygen</a> to generate an intermediate XML file. That XML file in turn is then parsed and interpreted to generate the palette and at the end written to a JSON palette file specified on the command line as <code>ofile</code>. Since doxygen is used as the code parser it is possible to use all the more advanced doxygen features. </p>
+<p>For dedicated DALiuGE components it is possible to use <a href="https://daliuge.readthedocs.io/en/latest/development/app_development/eagle_app_integration.html#component-doxygen-markup-guide">custom doxygen tagging</a> to inform the tool.</p>
+<h2 id="component-types">Component types</h2>
+<p>The tool supports components derived from a number of Python types:</p>
+<ul>
+<li>Classes</li>
+<li>Methods (class member functions)</li>
+<li>Plain functions (not associated to any class)</li>
+</ul>
+<h3 id="classes-and-methods">Classes and Methods</h3>
+<p>In practice, during execution, the engine has to deal with objects and not classes. Thus a component representing a class (e.g. <em>DummyClass</em>) is actually exposing the initializer method of the <em>DummyClass</em> (usually __init__ or __call__). This allows to initialize an object by placing the initializer component on the graph and then connect any of the class methods to it, where required. In order to aid this, the <em>self</em> argument of the initializer method is assigned to an output port of the associated component and the <em>self</em> argument of all other class methods is assigned to an input port of those components. The type of those ports is set to <em>Object.DummyClass</em> and that allows EAGLE to check and enforce valid connections. EAGLE users are thus able to construct object oriented graphs without writing a single line of code. </p>
+<p><em>NOTE:</em> dlg_paletteGen does not expose any <em>private</em> functions and methods starting with '_', except for the initializers __init__ and __call__.</p>
+<h3 id="plain-functions">Plain Functions</h3>
+<p>These are somewhat simpler than the classes and methods and are typically stand-alone functions contained in a set of files.</p>
+<h2 id="known-limitations">Known limitations</h2>
+<p>The support for direct module inspection was introduced in release 0.2.0 only and is still regarded experimental. In practice dlg_paletteGen enables the usage of a very big pool of Python software for the DALiuGE system. There are a couple of notable exceptions:</p>
+<ul>
+<li>Built-in functions</li>
+<li>Pure C or other language extensions, which are exposed in a similar way as built-in functions</li>
+</ul>
+<p>The reason for this limitation comes from an internal Python limitation that does not allow to fully inspect such functions and thus the actual detailed signature of such functions is hidden to the Python interpreter. The behavior of python did change significantly between python3.8 and python3.10, but there are still limitations. Some larger scale packages, e.g. <a href="https://www.astropy.org">astropy</a> or <a href="https://numpy.org">numpy</a> are using a mixture between pure C extensions, wrapped C code and plain Python code, thus some of the components might show up in a somewhat limited way. We will continue to work in trying to remove these limitations and would appreciate feedback for packages, which experience issues.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../search/main.js"></script>
+      
+    
+  </body>
+</html>

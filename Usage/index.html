@@ -1,0 +1,659 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Examples/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Usage - dlg_paletteGen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="dlg_paletteGen" class="md-header__button md-logo" aria-label="dlg_paletteGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dlg_paletteGen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="dlg_paletteGen" class="md-nav__button md-logo" aria-label="dlg_paletteGen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    dlg_paletteGen
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concept/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts and Details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mandatory-positional-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mandatory (positional) Arguments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mandatory (positional) Arguments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idir" class="md-nav__link">
+    <span class="md-ellipsis">
+      idir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      ofile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Arguments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Arguments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-help-h" class="md-nav__link">
+    <span class="md-ellipsis">
+      --help (-h)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-module-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      --module (-m)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-tag-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      --tag (-t)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      -c
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-recursive-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      --recursive (-r)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-split-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      --split (-S)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-parse-all-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      --parse-all (-s)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-verbose-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      --verbose (-v)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mandatory-positional-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mandatory (positional) Arguments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mandatory (positional) Arguments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idir" class="md-nav__link">
+    <span class="md-ellipsis">
+      idir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      ofile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Arguments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Arguments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-help-h" class="md-nav__link">
+    <span class="md-ellipsis">
+      --help (-h)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-module-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      --module (-m)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-tag-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      --tag (-t)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      -c
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-recursive-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      --recursive (-r)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-split-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      --split (-S)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-parse-all-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      --parse-all (-s)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-verbose-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      --verbose (-v)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="usage">Usage</h1>
+<p>After Installation the tool is available on the command line and as a module inside the virtual environment. There are different ways of calling it from the command line.</p>
+<pre><code class="language-bash">$ python -m dlg_paletteGen
+</code></pre>
+<p>or</p>
+<pre><code class="language-bash">$ dlg_paletteGen -h
+</code></pre>
+<p>or</p>
+<pre><code class="language-bash">$ dlg-paletteGen -h
+
+For more information please refer to the documentation
+https://icrar.github.io/dlg_paletteGen/
+
+Version: 0.3.1
+
+positional arguments:
+  idir                  input directory path or file name
+  ofile                 output file name
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -V, --version         show tool version and exit
+  -m MODULE, --module MODULE
+                        Module load path name
+  -t TAG, --tag TAG     filter components with matching tag
+  -c                    C mode, if not set Python will be used
+  -r, --recursive       Traverse sub-directories
+  -S, --split           Split into sub-module palettes
+  -s, --parse_all       Parse non DAliuGE compliant functions and methods
+  -v, --verbose         DEBUG level logging
+  -q, --quiet           Only critical logging
+
+</code></pre>
+<h2 id="mandatory-positional-arguments">Mandatory (positional) Arguments</h2>
+<h3 id="idir">idir</h3>
+<p>Path specification to a directory or a single file to be examined. See also <code>--recursive</code>. NOTE: If a module is specified using <code>--module</code> this is ignored, but still required for backwards compatibility reasons.</p>
+<h3 id="ofile">ofile</h3>
+<p>Path specification to an output file, which will be used to write the JSON version of the extracted palette to. If <code>--module</code> is specified and <code>ofile</code> is a <code>.</code> the module name will be used as the palette file name. If <code>--split</code> is also specified the value of <code>ofile</code> will be used as a prefix to all palette files.</p>
+<h2 id="optional-arguments">Optional Arguments</h2>
+<h3 id="-help-h">--help (-h)</h3>
+<p>Show the helptext displayed in the <code>Usage</code> paragraph above.</p>
+<h3 id="-module-m">--module (-m)</h3>
+<p>This allows to load a module to be examined.</p>
+<h3 id="-tag-t">--tag (-t)</h3>
+<p>In EAGLE mode, this tag will be used to identify components which should be examined and written to the palette.</p>
+<h3 id="-c">-c</h3>
+<p>Switches to C mode for the parsing of idir. Python is default.</p>
+<h3 id="-recursive-r">--recursive (-r)</h3>
+<p>If idir is a directory containing sub-directories, this flag will recursively examine all (<em>.py, </em>.h, *.hpp, depending on the <code>-c</code> flag setting) files found and add them to the palette.</p>
+<h3 id="-split-s">--split (-S)</h3>
+<p>For very big packages, like scipy and astropy, the number of components in a single palette would be really big and unmanageable. Setting this switch will trigger the generation of one palette per top-level sub-module. In this case the 'ofile' attribute will be used as a prefix. If <code>.</code> is specified no prefix will be used.</p>
+<h3 id="-parse-all-s">--parse-all (-s)</h3>
+<p>If set, allows to examine functions and methods regardless of whether they contain special DALiuGE doxygen tags or not. Default is that only those special tags are extracted, i.e. <code>-s</code> needs to be specified for everything else. NOTE: We will likely change the default in the future.</p>
+<h3 id="-verbose-v">--verbose (-v)</h3>
+<p>Switch to DEBUG output during extraction. This does create quite a lot of output and is usually only really useful when developing the tool further, or to report a bug.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../search/main.js"></script>
+      
+    
+  </body>
+</html>
